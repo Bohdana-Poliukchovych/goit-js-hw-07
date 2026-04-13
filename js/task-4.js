@@ -5,10 +5,21 @@ function getRandomHexColor() {
         }`;
 };
 
-const changeColorBtn = document.querySelector('.change-color');
-const colorSpan = document.querySelector('.color');
-changeColorBtn.addEventListener('click', () => {
-    const targetColor = getRandomHexColor();
-    document.body.style.backgroundColor = targetColor;
-    colorSpan.textContent = targetColor;
-});
+const form = document.querySelector('.login-form');
+form.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const email = form.nextElementSibling.email.value.trim();
+    const password = form.nextElementSibling.password.value.trim();
+
+    if (email === '' || password === '') {
+        alert('All form fields must be filled in');
+        return;
+    }
+
+    const formData = {
+        email: email,
+        password: password,
+    }
+    console.log(formData);
+})

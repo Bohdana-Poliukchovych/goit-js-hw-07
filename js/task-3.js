@@ -1,16 +1,13 @@
-const loginForm = document.querySelector('.login-form');
+const input = document.querySelector('#name-input');
+const output = document.querySelector('#name-output');
 
-loginForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const { email, password } = event.currentTarget.elements;
-    if (email.value.trim() === "" || password.value.trim() === "") {
-        return alert("All form fieldsmust befilled in");
+input.addEventListener('input', (event) => {
+    const value = event.target.value.trim();
+
+    if (value === '') {
+        output.textContent = 'Anonymous';
+    } else {
+        output.textContent = value;
+
     }
-
-    const formData = {
-        email: email.value.trim(),
-        password: password.value.trim(),
-    };
-    console.log(formData);
-    event.currentTarget.reset();
-});
+})

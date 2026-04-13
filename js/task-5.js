@@ -4,15 +4,12 @@ function getRandomHexColor() {
     .padStart(6, 0)}`;
 }
 
-const nameInput = document.querySelector('#name-input');
-const nameOutput = document.querySelector('#name-output');
+const button = document.querySelector('.change-color');
+const colorSpan = document.querySelector('.color');
+const body = document.body;
 
-nameInput.addEventListener('input', (event) => {
-  const trimmedValue = event.currentTarget.value.trim();
-  if (trimmedValue === '') {
-    nameOutput.textContent = 'Anonymous';
-  } else {
-    nameOutput.textContent = trimmedValue;
-
-  }
+button.addEventListener('click', () => {
+  const randomColor = getRandomHexColor();
+  body.style.backgroundColor = randomColor;
+  colorSpan.textContent = randomColor;
 });
