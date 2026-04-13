@@ -5,12 +5,10 @@ function getRandomHexColor() {
         }`;
 };
 
-const button = document.querySelector('.change-color');
+const changeColorBtn = document.querySelector('.change-color');
 const colorSpan = document.querySelector('.color');
-const body = document.body;
-
-button.addEventListener('click', () => {
-    const newColor = getRandomHexColor();
-    body.style.backgroundColor = newColor;
-    colorSpan.textContent = newColor;
-})
+changeColorBtn.addEventListener('click', () => {
+    const targetColor = getRandomHexColor();
+    document.body.style.backgroundColor = targetColor;
+    colorSpan.textContent = targetColor;
+});

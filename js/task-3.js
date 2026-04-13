@@ -12,5 +12,5 @@ loginForm.addEventListener('submit', (event) => {
         password: password.value.trim(),
     };
     console.log(formData);
-    event.currentTarget.removeEventListener();
+    event.currentTarget.reset();
 });
